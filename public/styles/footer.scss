@@ -1,0 +1,25 @@
+footer{
+  width: 100vw;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  box-shadow: 0 -1px 5px #dddddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background-color: $white;
+
+
+  a{
+    font-family: $font-stack;
+    font-weight: 600;
+    color: $red;
+    font-size: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+}

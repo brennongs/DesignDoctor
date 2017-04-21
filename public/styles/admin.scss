@@ -1,0 +1,73 @@
+.admin-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  form{
+    display: flex;
+    // flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    // height: 100%;
+    width: 97%;
+
+    .name, .mid-container, .diagnosis, .photos, {
+      margin: 5% 0;
+      width: 100%;
+      padding: 0 2.5%;
+
+
+      h1{
+        font-family: $font-stack;
+        font-weight: 600;
+        font-size: 15px;
+        color: $red;
+        display:flex;
+        margin: 2px 0;
+        width: 95%;
+
+      }
+    }
+    #back{
+      position: absolute;
+      right: 10%;
+      top: 17.5;
+      font-family: $font-stack;
+      color: $red;
+      font-size: 15px;
+      font-weight: 600;
+      display: flex;
+    }
+    .diagnosis{
+      textarea{
+        height: 50px;
+        width: 100%;
+      }
+    }
+  }
+  .submit{
+    position: absolute;
+    bottom:0;
+    color: $red;
+    width: 100%;
+    height: 75px;
+    font-family: $font-stack;
+    font-size: 30px;
+    font-weight: 600;
+    background-color: $white;
+    border: none;
+    box-shadow: 0 .5px 15px $light-grey;
+  }
+  .mid-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .meta{
+      width:40%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

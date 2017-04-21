@@ -1,0 +1,51 @@
+.case-container{
+padding: 50px 10px;
+font-family: $font-stack;
+  .case{
+    margin: -110px auto 0 auto;
+    position: relative;
+    background-color: $dark-grey;
+    height: 160px;
+    width: 95%;
+    border: 2.5px solid $white;
+    border-radius: 8px;
+    border-top-left-radius: 0;
+    display: flex;
+    align-items: baseline;
+    &:after{
+      content: "";
+      background-color: inherit;
+      width: 85px;
+      height: 10px;
+      border-top: 2.5px solid white;
+      border-left: 2.5px solid white;
+      border-right: 2.5px solid white;
+      border-top-right-radius: 8px;
+      border-top-left-radius: 8px;
+      position: absolute;
+      top: -12.5;
+      left: -2;
+    }
+    &:first-child{
+      margin-top: 25px;
+    }
+    .head{
+      z-index: 999;
+      width: 29%;
+      display: flex;
+      justify-content: center;
+      font-weight: 600;
+      align-items: center;
+      font-size: 23px;
+      color: white;
+    };
+
+    .title{
+      width: auto;
+      position: relative;
+      top: 0;
+      left: 35;
+      color: $white;
+    }
+  }
+}

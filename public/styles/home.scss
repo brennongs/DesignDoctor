@@ -1,0 +1,50 @@
+.opts-cont{
+  height: 100%;
+  width: 100%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .line{
+    height: 0;
+    width: 90%;
+    border-top: 1px $white solid;
+  }
+
+  .opt{
+    height: calc(100%/3);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: $font-stack;
+    line-height: 20px;
+
+    div{
+      margin: 2px;
+    }
+
+
+    .img{
+      img {height: 30px; width: auto;}
+      height: 40px;
+    }
+    .title{
+      font-weight: 400;
+    }
+    .desc{
+      font-weight: 200;
+      color: $light-grey;
+      font-size: 13px;
+    }
+  }
+  .ui{
+    padding-top: 50px;
+  }
+
+  .hp{
+    padding-bottom: 50px;
+  }
+}

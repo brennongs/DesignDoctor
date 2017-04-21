@@ -1,0 +1,53 @@
+nav{
+  height: 50px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 .5px 5px #dddddd;
+  position: fixed;
+  background-color: $white;
+
+  .container{
+    width: 95%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    #logo{
+      display: flex;
+      width: 250px;
+      height:auto;
+
+      #pic{
+        width: 100%;
+        height: auto;
+
+      }
+
+    }
+    #opt-nav{
+      display: none;
+      width: 200px;
+      height: auto;
+      flex-direction: row;
+      justify-content: space-between;
+      color: $dark-grey;
+
+      .small-opt{
+        height: 30px;
+        width: auto;
+      }
+    }
+
+    #nav{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $red;
+      font-size: 20px;
+      font-weight: 200;
+    }
+  }
+}

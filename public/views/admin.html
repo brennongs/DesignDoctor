@@ -1,0 +1,55 @@
+<!--CONTENT-->
+<div class="admin-container">
+  <form novalidate>
+    <div class="name">
+      <a id="back" href="#" ui-sref="home">BACK TO CASES</a>
+      <h1>CASE NAME</h1>
+      <input type="text" ng-model="params.key" placeholder="name post">
+    </div>
+
+    <div class="diagnosis">
+      <h1>DIAGNOSIS</h1>
+      <textarea ng-model="params.diagnosis" type="text"></textarea>
+    </div>
+
+    <div class="mid-container">
+
+      <div class="principles">
+        <h1>PRINCIPLES</h1>
+        <div ng-repeat="p in principles"><input type="checkbox" ng-model="params[p]">{{p}}</div>
+
+      </div>
+
+      <div class="meta">
+        <h1>METADATA</h1>
+        <div>
+          <span>PATIENT</span>
+          <input type="text" ng-model="params.patient"></div>
+        <div class="doctor">
+          <span>DOCTOR</span>
+          <select ng-model="params.doctor">
+            <option value="Greg Benson">Greg Benson</option>
+          </select>
+        </div>
+        <div>
+          <span>SPECIALTY</span>
+          <select ng-model="params.specialty">
+            <option value="User Experience">User Experience</option>
+            <option value="User Interface">User Interface</option>
+            <option value="High Profile">High Profile</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="photos">
+      <h1>PHOTOS</h1>
+      <input bg-upload type="file" images="images" accept="image/*" ng-model="params.before">
+      <input bg-upload type="file" images="images" accept="image/*" ng-model="params.after">
+    </div>
+  </form>
+
+  <button class="submit"value="UPLOAD" ng-click="sendPost(params)" ui-sref="home">UPLOAD</button>
+
+
+</div>
