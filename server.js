@@ -70,7 +70,6 @@ app.get(`/api/cases`,(req,res)=>{
 });
 
 app.get(`/api/single`, (req,res)=>{
-  console.log(req);
   db.run(`SELECT cases.id, cases.name as title, diagnosis, patient, doctor, specialty, before, after, status.status, principles.name as principle FROM cases JOIN status ON cases.id=status.caseid JOIN principles ON principles.id=status.pid WHERE cases.id = ${req.query.id};`, (err, data)=>{
     let single={
       id: data[0].id, title: data[0].title, diagnosis: data[0].diagnosis, patient: data[0].patient, doctor:data[0].doctor, specialty: data[0].specialty, before: data[0].before, after: data[0].after, principles: []

@@ -1,6 +1,6 @@
 angular.module(`DesignDoc`).service(`adminService`,function($http){
 
-  //display principles
+  //===display principles===\\
   this.getPrinciples=()=>{
     return $http.get(`/api/principles`).then((r)=>{
       let objects=[...r.data];
@@ -11,8 +11,9 @@ angular.module(`DesignDoc`).service(`adminService`,function($http){
       return principles;
     })
   }
-  this.params={};
-  this.putPost=(p)=>{
+
+  //===send post to server===\\
+  this.sendPost=(p)=>{
     console.log(p);
     imageExtensionB = p.before.imageData.split(';')[0].split('/')
     imageExtensionB = imageExtensionB[imageExtensionB.length - 1];

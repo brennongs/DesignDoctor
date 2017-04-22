@@ -22,6 +22,7 @@ angular.module(`DesignDoc`,[`ui.router`]).config(function($urlRouterProvider, $s
 }).directive(`bgUpload`,function(adminService){
   return {
     restrict: `A`,
+    contoller: 'adminCtrl',
     link: (scope,elem,attrs)=>{
       elem.bind(`change`,(changeEvent)=>{
         let reader=new FileReader();
@@ -29,13 +30,13 @@ angular.module(`DesignDoc`,[`ui.router`]).config(function($urlRouterProvider, $s
           let fileread=loadEvent.target.result,
               name=elem[0].files[0].name;
           if(attrs.ngModel===`params.before`){
-            adminService.params.before={
+            scope.params.before={
                 imageData: fileread,
               filename: name
             };
           }
           else if(attrs.ngModel===`params.after`){
-            adminService.params.after={
+            scope.params.after={
                 imageData: fileread,
               filename: name
             };

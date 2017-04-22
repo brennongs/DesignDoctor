@@ -16,7 +16,7 @@
 
       <div class="principles">
         <h1>PRINCIPLES</h1>
-        <div ng-repeat="p in principles"><input type="checkbox" ng-model="params[p]">{{p}}</div>
+        <div ng-repeat="p in principles"><input type="checkbox" ng-model="params[p]" ng-init="params[p]=false">{{p}}</div>
 
       </div>
 
