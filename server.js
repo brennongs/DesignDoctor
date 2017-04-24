@@ -22,24 +22,33 @@ app.set(`db`,db);
 //endpoints
 app.post(`/api/upload`,(req,res)=>{
   let single=req.body;
-  console.log(single.principles);
-  S3.sendPics(single.before, (x)=>{
-    single.before=x.Location;
-    S3.sendPics(single.after, (x)=>{
-      single.after=x.Location;
+  let principles=Object.keys(single).filter((x)=>{
+    return (x===true||x===false);
+  })
+  console.log(principles);
+  console.log(single);
+  S3.sendPics(single.before, (data, err)=>{
+    if (err) {console.log(err);}
+    single.before=data.Location;
+    S3.sendPics(single.after, (data, err)=>{
+      if(err){console.log(err);}
+      single.after=data.Location;
       db.cases.insert({name: single.key, diagnosis: single.diagnosis, before: single.before, after: single.after, patient: single.patient, doctor: single.doctor, specialty: single.specialty},(err,data)=>{
         console.log(data, `31`);
         db.run(`select * from principles;`,(err,p)=>{
-          console.log(p, `33`);
           p.forEach((x)=>{
-            db.insertPrinciples([data.id, x.id, single.principles[x.name]],()=>{});
+            console.log(x);
+            db.status.insert({caseid: data.id, pid: p.id, status: single[p.name]},(data,err)=>{
+              if(err){console.log(err);};
+            });
           })
-          res.end();
         })
+        res.send(`ok!`);
       })
     })
   })
-})
+});
+
 app.delete(`/api/delete`,(req,res)=>{
   db.run(`delete from status s using cases c where s.caseid=c.id and c.id=${req.query.id};`,(err1, data)=>{
     if (err1) {res.send(err1)};
@@ -64,7 +73,6 @@ app.get(`/api/cases`,(req,res)=>{
       })
       response.push(single)
     })
-    console.log(response);
     res.json(response);
   })
 });

@@ -6,7 +6,7 @@ angular.module(`DesignDoc`).service(`adminService`,function($http){
       let objects=[...r.data];
       let principles=[];
       objects.map((x)=>{
-        principles.push(x.name.toUpperCase());
+        principles.push(x.name);
       })
       return principles;
     })
@@ -33,7 +33,7 @@ angular.module(`DesignDoc`).service(`adminService`,function($http){
       userEmail: `brennonschow@gmail.com`
     }
 
-    return $http.put(`/api/upload`,p).then((r) =>{
+    return $http.post(`/api/upload`,p).then((r) =>{
       console.log(r);
     });
   }
