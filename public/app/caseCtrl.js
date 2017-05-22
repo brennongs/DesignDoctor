@@ -71,5 +71,5 @@ angular.module(`DesignDoc`).controller(`caseCtrl`, function($scope, caseService,
       })
     })
   }
-  $scope.section='case'
+  $scope.section='intro'
 });

@@ -183,7 +183,7 @@ angular.module('DesignDoc').controller('caseCtrl', ["$scope", "caseService", "$s
       });
     });
   };
-  $scope.section = 'case';
+  $scope.section = 'intro';
 }]);
 "use strict";
 
