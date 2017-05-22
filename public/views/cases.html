@@ -1,7 +1,7 @@
 <!--CONTENT-->
 <div class="case-container">
-  <div class="case" ng-repeat="c in cases">
-    <div class="head">CASE</div>
-    <div class="title">{{c.title}}</div>
+  <div class="case" ng-repeat="c in cases" ng-click="setSingle(c.id)">
+      <div class="head">CASE</div>
+      <div class="title">{{c.title}}</div>
   </div>
 </div>

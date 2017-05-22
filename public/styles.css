@@ -212,6 +212,7 @@ footer {
   padding: 50px 10px;
   font-family: "Rubik", sans-serif; }
   .case-container .case {
+    cursor: pointer;
     margin: -110px auto 0 auto;
     position: relative;
     background-color: #4d4d4d;

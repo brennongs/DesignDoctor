@@ -1,7 +1,7 @@
-angular.module(`DesignDoc`).controller(`navCtrl`,function($scope,$rootScope,$stateParams,$state){
+angular.module(`DesignDoc`).controller(`navCtrl`,function($scope,$stateParams,$state){
   $(`nav`).css(`dislay`,`flex`);
   $(`footer`).css(`display`,`flex`);
-  //manipulation of navbar
+  //===manipulation of navbar===\\
     $(`.opt`).on(`click`, (e)=>{
       $(`#logo`).css(`height`,`55%`).css(`width`,`auto`);
       $(`#pic`).css(`width`,`auto`).css(`height`,`100%`).attr(`src`,`./img/logo_D.png`);

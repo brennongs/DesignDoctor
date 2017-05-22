@@ -3,12 +3,12 @@ angular.module(`DesignDoc`).service(`adminService`,function($http){
   //===display principles===\\
   this.getPrinciples=()=>{
     return $http.get(`/api/principles`).then((r)=>{
-      let objects=[...r.data];
-      let principles=[];
+      let objects=[...r.data]
+      let principles=[]
       objects.map((x)=>{
-        principles.push(x.name);
+        principles.push(x.name)
       })
-      return principles;
+      return principles
     })
   }
 

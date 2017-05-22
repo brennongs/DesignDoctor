@@ -9,10 +9,6 @@ angular.module(`DesignDoc`,[`ui.router`]).config(function($urlRouterProvider, $s
     url: `/cases/:type`,
     templateUrl: `./views/cases.html`,
     controller: `caseCtrl`
-  }).state(`one-case`,{
-    url: `/cases/:id`,
-    templateUrl: `./views/one-case.html`,
-    controller: `caseCtrl`
   }).state(`admin`,{
     url:`/admin`,
     templateUrl: `./views/admin.html`,

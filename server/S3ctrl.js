@@ -4,13 +4,13 @@ const AWS=require(`aws-sdk`),
 
 //S3 setup
 AWS.config.update({
-  accessKeyId: keys.aws.access,
-  secretAccessKey: keys.aws.secret,
-  region: keys.aws.region
+  accessKeyId: keys.s3.access,
+  secretAccessKey: keys.s3.secret,
+  region: keys.s3.region
 });
 const S3=new AWS.S3();
 
-const bucketName=keys.aws.bucket;
+const bucketName=keys.s3.bucket;
 exports.sendPics=(pic, cb)=>{
   let buf=new Buffer(pic.imageBody.replace(/^data:image\/\w+;base64,/, ""), 'base64');
 

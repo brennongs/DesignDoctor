@@ -10,10 +10,13 @@
     "express": "^4.15.2",
     "massive": "^2.6.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "concurrently": "^3.4.0"
+  },
   "scripts": {
+    "start": "concurrently \"yarn server\" \"sass --watch ./public/styles/main.scss:./public/styles.css\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "server": "nodemon server.js"
   },
   "keywords": [],
   "author": "",

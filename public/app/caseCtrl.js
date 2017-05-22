@@ -47,7 +47,6 @@ angular.module(`DesignDoc`).controller(`caseCtrl`, function($scope, caseService,
 
         case `UserExperience`:
           $scope.cases=r.data.filter((x)=>{
-            console.log(x);
             return x.specialty===`User Experience`;
           });
           break;
@@ -61,4 +60,13 @@ angular.module(`DesignDoc`).controller(`caseCtrl`, function($scope, caseService,
     })
   }
   $scope.getCases($state.params.type);
+
+  //===set single case===\\
+  $scope.setSingle=(id)=>{
+    console.log(id);
+    caseService.getSingle(id).then((r)=>{
+      $scope.single=r.data
+      console.log($scope.single)
+    })
+  }
 });
