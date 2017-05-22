@@ -1,11 +1,12 @@
 /*global*/
-@import '_reset.scss';
-@import '_variables.scss';
+@import 'reset';
+@import 'variables';
 
-@import 'nav.scss';
-@import 'footer.scss';
+@import 'nav';
+@import 'footer';
 
 /*views*/
-@import 'home.scss';
-@import 'admin.scss';
-@import 'cases.scss';
+@import 'home';
+@import 'admin';
+@import 'cases';
+@import 'single'

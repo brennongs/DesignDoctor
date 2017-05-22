@@ -13,6 +13,7 @@ font-family: $font-stack;
     border-top-left-radius: 0;
     display: flex;
     align-items: baseline;
+    justify-content: space-between;
     &:after{
       content: "";
       background-color: inherit;
@@ -33,8 +34,7 @@ font-family: $font-stack;
     .head{
       z-index: 999;
       width: 23%;
-      display: flex;
-      justify-content: center;
+      margin-left: 10px;
       font-weight: 600;
       align-items: center;
       font-size: 23px;
@@ -43,9 +43,7 @@ font-family: $font-stack;
 
     .title{
       width: auto;
-      position: relative;
-      top: 0;
-      left: 35;
+      margin-right: 30px;
       color: $white;
     }
   }
