@@ -1,0 +1,120 @@
+.single{
+  padding: 45px 20px 50px 20px;
+  width: 100vw;
+  font-family: $font-stack;
+  color: $white;
+
+  .intro{
+    margin-top: 30px;
+    background-color: $red;
+    position: relative;
+    border-top-right-radius: 8px;
+    border: 2px solid $white;
+    &:after{
+      content: "";
+      height: 10px;
+      width: 85px;
+      background-color: $red;
+      position: absolute;
+      top:-12.5;
+      left:-2;
+      border: 2px solid $white;
+      border-bottom: none;
+      border-top-right-radius: 8px;
+      border-top-left-radius: 8px;
+    }
+    .head{
+      height: 35px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      .header{
+        font-weight: 600;
+        font-size: 23px;
+        margin-left: 10px;
+      }
+      .title{
+        margin-right: 30px;
+      }
+    }
+    .before{
+      overflow-y: hidden;
+      margin: 5px;
+      img{
+        height: 65vh;
+        width: auto;
+
+      }
+    }
+  }
+
+  .diagnosis{
+    background-color: $blue;
+    border: 2px solid $white;
+    border-top: none;
+    .head{
+      height: 35px;
+      font-weight: 600;
+      font-size: 23px;
+      margin-left: 10px;
+      display: flex;
+      align-items: center;
+    }
+    .p-list{
+      box-sizing: border-box;
+      border-bottom: 5px solid $blue;
+      border-left: 5px solid $blue;
+      float: left;
+      padding: 30px 10px 145px 10px;
+      height: 66.3vh;
+      background-color: $light-blue;
+      color: $blue;
+      width: 45%;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      .p-header{
+        font-size: 20px;
+      }
+      .p{
+        color: black;
+        font-family: $font-stack;
+      }
+    }
+    .desc{
+      box-sizing: border-box;
+      border-bottom: 5px solid $blue;
+      border-right: 5px solid $blue;
+      display: inline-block;
+      width: 55%;
+      height: 66.3vh;
+      background-color: $white;
+      color: black;
+      padding: 40px;
+    }
+  }
+
+  .prescription{
+    background-color: $green;
+    border: 2px solid $white;
+    border-top: none;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    .head{
+      height: 35px;
+      font-weight: 600;
+      font-size: 23px;
+      margin-left: 10px;
+      display: flex;
+      align-items: center;
+    }
+    .after{
+      overflow-y: hidden;
+      margin: 5px;
+      img{
+        height: 65vh;
+        width: auto;
+      }
+    }
+  }
+}
