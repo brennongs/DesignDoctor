@@ -280,7 +280,11 @@ footer {
       height: 35px;
       display: flex;
       justify-content: space-between;
-      align-items: baseline; }
+      align-items: baseline;
+      margin-right: 10px; }
+      .single .intro .head i {
+        font-weight: 600;
+        font-size: 23px; }
       .single .intro .head .header {
         font-weight: 600;
         font-size: 23px;
@@ -303,7 +307,9 @@ footer {
       font-size: 23px;
       margin-left: 10px;
       display: flex;
-      align-items: center; }
+      align-items: center;
+      justify-content: space-between;
+      margin-right: 10px; }
     .single .diagnosis .p-list {
       box-sizing: border-box;
       border-bottom: 5px solid #1dc5df;
@@ -344,7 +350,9 @@ footer {
       font-size: 23px;
       margin-left: 10px;
       display: flex;
-      align-items: center; }
+      align-items: center;
+      justify-content: space-between;
+      margin-right: 10px; }
     .single .prescription .after {
       overflow-y: hidden;
       margin: 5px; }
