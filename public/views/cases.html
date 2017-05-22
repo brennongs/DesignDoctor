@@ -1,7 +1,41 @@
-<!--CONTENT-->
-<div class="case-container">
-  <div class="case" ng-repeat="c in cases" ng-click="setSingle(c.id)">
+<!--CASE LIST-->
+<div class="case-container" ng-show="!single">
+  <div class="case" ng-repeat="c in cases" ng-click="setSingle(c.id)" >
       <div class="head">CASE</div>
       <div class="title">{{c.title}}</div>
   </div>
+</div>
+
+<!--SINGLE-->
+<div class="single" ng-show="single">
+
+  <div class="intro">
+    <div class="head" ng-click="section='case'">
+      <span class="header">CASE</span>
+      <span class="title">{{single.title}}</span>
+    </div>
+    <div class="before" ng-show="section==='case'"><img src="{{single.before}}"></div>
+  </div>
+
+  <div class="diagnosis">
+    <div class="head" ng-click="section='diagnosis'"><span class="header">DIAGNOSIS</span></div>
+    <div class="p-list" ng-show="section==='diagnosis'">
+      <span class="p-header">PRINCIPLES OF DESIGN</span>
+      <div class="principles" ng-repeat="p in single.principles">
+        <div class="true" ng-if="p.status">
+          <i class="fa fa-check" aria-hidden="true" style="color: #1dc5df"><span class="p">{{p.principle}}</span></i>
+        </div>
+        <div class="false" ng-if="!p.status">
+          <i class="fa fa-times" aria-hidden="true" style="color: #ff4338"><span class="p">  {{p.principle}}</span></i>
+        </div>
+      </div>
+    </div>
+    <div class="desc" ng-show="section==='diagnosis'">{{single.diagnosis}}</div>
+  </div>
+
+  <div class="prescription">
+    <div class="head" ng-click="section='prescription'"><span class="header">PRESCRIPTION</span></div>
+    <div class="after" ng-show="section==='prescription'"><img src="{{single.after}}" alt=""></div>
+  </div>
+  <div class="back" ng-click="single=null">BACK</div>
 </div>

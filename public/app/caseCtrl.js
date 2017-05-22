@@ -63,10 +63,13 @@ angular.module(`DesignDoc`).controller(`caseCtrl`, function($scope, caseService,
 
   //===set single case===\\
   $scope.setSingle=(id)=>{
-    console.log(id);
+    $scope.principles=[]
     caseService.getSingle(id).then((r)=>{
       $scope.single=r.data
-      console.log($scope.single)
+      $scope.single.principles.forEach((p, i)=>{
+        $scope.single.principles[i].principle=p.principle.slice(0,1).toUpperCase()+p.principle.slice(1)
+      })
     })
   }
+  $scope.section='case'
 });
