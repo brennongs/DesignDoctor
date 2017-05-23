@@ -72,4 +72,10 @@ angular.module(`DesignDoc`).controller(`caseCtrl`, function($scope, caseService,
     })
   }
   $scope.section='intro'
+  //===collapse/expand section on click===\\
+  $scope.handleClick=(section)=>{
+    return $scope.section===section ?
+      $scope.section=null :
+      $scope.section=section
+  }
 });

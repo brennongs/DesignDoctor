@@ -10,7 +10,7 @@
 <div class="single" ng-show="single">
 <!----->
   <div class="intro">
-    <div class="head" ng-click="section='intro'">
+    <div class="head" ng-click="handleClick('intro')">
       <span class="header">CASE</span>
       <span class="title">{{single.title}}</span>
       <i class="fa fa-plus" aria-hidden="true" ng-show="section!=='intro'"></i>
@@ -20,7 +20,7 @@
   </div>
 <!----->
   <div class="diagnosis">
-    <div class="head" ng-click="section='diagnosis'">
+    <div class="head" ng-click="handleClick('diagnosis')">
       <span class="header">DIAGNOSIS</span>
       <i class="fa fa-minus" aria-hidden="true" ng-show="section==='diagnosis'"></i>
       <i class="fa fa-plus" aria-hidden="true" ng-show="section!=='diagnosis'"></i>
@@ -40,7 +40,7 @@
   </div>
 <!----->
   <div class="prescription">
-    <div class="head" ng-click="section='prescription'">
+    <div class="head" ng-click="handleClick('prescription')">
       <span class="header">PRESCRIPTION</span>
       <i class="fa fa-minus" aria-hidden="true" ng-show="section==='prescription'"></i>
       <i class="fa fa-plus" aria-hidden="true" ng-show="section!=='prescription'"></i>
