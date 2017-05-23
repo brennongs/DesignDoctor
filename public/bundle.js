@@ -184,6 +184,10 @@ angular.module('DesignDoc').controller('caseCtrl', ["$scope", "caseService", "$s
     });
   };
   $scope.section = 'intro';
+  //===collapse/expand section on click===\\
+  $scope.handleClick = function (section) {
+    return $scope.section === section ? $scope.section = null : $scope.section = section;
+  };
 }]);
 "use strict";
 
