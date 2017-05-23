@@ -24,7 +24,7 @@
       border-top-left-radius: 8px;
     }
     .head{
-      height: 35px;
+      height: 30px;
       display: flex;
       justify-content: space-between;
       align-items: baseline;
@@ -32,6 +32,10 @@
       i{
         font-weight: 600;
         font-size: 23px;
+        &:before{
+          position: relative;
+          top: 5px;
+        }
       }
       .header{
         font-weight: 600;
