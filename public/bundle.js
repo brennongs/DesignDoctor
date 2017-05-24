@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-angular.module("DesignDoc").controller("adminCtrl", ["$scope", "$state", "adminService", function ($scope, $state, adminService) {
+angular.module('DesignDoc').controller('adminCtrl', ["$scope", "$state", "adminService", function ($scope, $state, adminService) {
   $scope.params = {};
   //display principles
   $scope.getPrinciples = function () {
@@ -10,9 +10,14 @@ angular.module("DesignDoc").controller("adminCtrl", ["$scope", "$state", "adminS
   };
   $scope.getPrinciples();
 
-  //hide/show nav/footer
-  $("nav").css("display", "none");
-  $("footer").css("display", "none");
+  //hide nav/footer
+  $('nav').css('display', 'none');
+  $('footer').css('display', 'none');
+
+  //===show nav on back===\\
+  $scope.handleClick = function () {
+    $('nav').css('display', 'flex');
+  };
 
   //encode photos to base64
   $scope.sendPost = function (params) {
