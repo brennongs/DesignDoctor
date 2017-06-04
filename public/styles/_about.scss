@@ -1,0 +1,44 @@
+.about-container{
+  font-family: $font-stack;
+  font-size: 18px;
+  padding: 60px 20px;
+  font-weight: 200;
+  .header{
+    color: $red;
+    font-weight: 400;
+    font-size: 35px;
+    display: flex;
+    height: 35px;
+    margin: 5px;
+  }
+  .quote{
+    color: $white;
+    background-color: $dark-grey;
+    padding: 20px;
+    border-radius: 6px;
+    font-weight: 300;
+    font-style: italic;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    .text{
+      padding: 10px 0;
+    }
+  }
+  .about{
+    padding: 10px 0;
+    strong{
+      font-style: italic;
+    }
+  }
+  .about-button{
+    color: $red;
+    border: 1px solid $red;
+    border-radius: 6px;
+    width: 160px;
+    height:30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
