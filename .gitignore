@@ -1,6 +1,7 @@
 node_modules
 server/keys.js
-public/styles.css/
+public/styles.css
+public/maps/styles.css.map
 public/styles.css.map
 .sass-cache
 ubuntu@ec2-34-223-201-254.us-west-2.compute.amazonaws.com

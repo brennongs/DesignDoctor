@@ -1,5 +1,47 @@
 'use strict';
 
+angular.module('DesignDoc').controller('aboutCtrl', ["$scope", "$state", "$sce", "aboutService", function ($scope, $state, $sce, aboutService) {
+
+  $scope.getText = function (name, cb) {
+    aboutService.getText(name).then(function (response) {
+      cb(response.data);
+    });
+  };
+  $scope.getText('about-me');
+
+  $scope.setPage = function (url) {
+    switch (url) {
+      case '/about-this':
+        $scope.getText('about-quote', function (x) {
+          $scope.quote = $sce.trustAsHtml(x);
+        });
+        $scope.getText('quote-author', function (x) {
+          $scope.author = $sce.trustAsHtml(x);
+        });
+        $scope.getText('about-this', function (x) {
+          $scope.about = $sce.trustAsHtml(x);
+        });
+        break;
+      case '/about-me':
+        $scope.getText('about-me', function (x) {
+          $scope.about = $sce.trustAsHtml(x);
+        });
+    }
+  };
+  $scope.setPage($state.current.url);
+}]);
+'use strict';
+
+angular.module('DesignDoc').service('aboutService', ["$http", function ($http) {
+  //===get texts===//
+  this.getText = function (name) {
+    return $http.get('/api/texts/' + name).then(function (response) {
+      return response;
+    });
+  };
+}]);
+'use strict';
+
 angular.module('DesignDoc').controller('adminCtrl', ["$scope", "$state", "adminService", function ($scope, $state, adminService) {
   $scope.params = {};
   //display principles
@@ -87,6 +129,14 @@ angular.module('DesignDoc', ['ui.router']).config(["$urlRouterProvider", "$state
     url: '/admin',
     templateUrl: './views/admin.html',
     controller: 'adminCtrl'
+  }).state('this', {
+    url: '/about-this',
+    templateUrl: './views/about-this.html',
+    controller: 'aboutCtrl'
+  }).state('me', {
+    url: '/about-me',
+    templateUrl: './views/about-me.html',
+    controller: 'aboutCtrl'
   });
 }]).directive('bgUpload', ["adminService", function (adminService) {
   return {
