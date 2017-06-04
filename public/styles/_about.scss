@@ -40,5 +40,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    &:hover{
+      border: 1px solid $white;
+      background-color: $red;
+      color: $white;
+    }
   }
 }
