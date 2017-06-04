@@ -101,3 +101,11 @@ app.get(`/api/principles`,(req,res)=>{
     res.send(data)
   })
 })
+
+app.get('/api/texts/:name',(req,res)=>{
+  let name=req.params.name
+  db.run('select name, text from texts where name=$1',[name],(err, data)=>{
+    if (err) {res.send(err)}
+    res.send(data[0].text)
+  })
+})

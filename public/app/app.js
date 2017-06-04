@@ -13,6 +13,14 @@ angular.module(`DesignDoc`,[`ui.router`]).config(function($urlRouterProvider, $s
     url:`/admin`,
     templateUrl: `./views/admin.html`,
     controller: `adminCtrl`
+  }).state('this',{
+    url:'/about-this',
+    templateUrl: './views/about-this.html',
+    controller: 'aboutCtrl'
+  }).state('me',{
+    url: '/about-me',
+    templateUrl: './views/about-me.html',
+    controller: 'aboutCtrl'
   })
 
 }).directive(`bgUpload`,function(adminService){
