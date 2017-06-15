@@ -130,4 +130,21 @@
       }
     }
   }
+  .back{
+    height: 20px;
+    width: 100px;
+    color: $red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $red;
+    border-radius: 6px;
+    &:hover{
+      @media(min-width: 600px){
+        background-color: $red;
+        color: $white;
+        cursor: pointer;
+      }
+    }
+  }
 }

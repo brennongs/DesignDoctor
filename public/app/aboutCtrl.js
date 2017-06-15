@@ -5,7 +5,6 @@ angular.module('DesignDoc').controller('aboutCtrl',function($scope, $state, $sce
       cb(response.data)
     })
   }
-  $scope.getText('about-me')
 
 
   $scope.setPage=(url)=>{

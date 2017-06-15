@@ -12,5 +12,8 @@ angular.module(`DesignDoc`).controller(`navCtrl`,function($scope,$stateParams,$s
       $(`#pic`).css(`width`,`100%`).css(`height`,`auto`).attr(`src`,`./img/logo_full.svg`);
       $(`#opt-nav`).css(`display`,`none`);
     });
-
+    $scope.show=false
+    $scope.logShow=()=>{
+      console.log($scope.show)
+    }
 });

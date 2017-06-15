@@ -25,8 +25,6 @@ app.post(`/api/upload`,(req,res)=>{
   let principles=Object.keys(single).filter((x)=>{
     return (x===true||x===false)
   })
-  console.log(principles)
-  console.log(single)
   S3.sendPics(single.before, (data, err)=>{
     if (err) {console.log(err);}
     single.before=data.Location;
@@ -34,10 +32,8 @@ app.post(`/api/upload`,(req,res)=>{
       if(err){console.log(err)}
       single.after=data.Location;
       db.cases.insert({name: single.key, diagnosis: single.diagnosis, before: single.before, after: single.after, patient: single.patient, doctor: single.doctor, specialty: single.specialty},(err,data)=>{
-        console.log(data, `31`)
         db.run(`select * from principles;`,(err,p)=>{
           p.forEach((x)=>{
-            console.log(x)
             db.status.insert({caseid: data.id, pid: x.id, status: single[x.name]},(data,err)=>{
               if(err){console.log(err)}
             });
@@ -80,10 +76,7 @@ app.get(`/api/cases`,(req,res)=>{
 
 app.get(`/api/single`, (req,res)=>{
   let id=req.query.id
-  console.log(id);
   db.run(`SELECT cases.id, cases.name as title, diagnosis, patient, doctor, specialty, before, after, status.status, principles.name as principle FROM cases JOIN status ON cases.id=status.caseid JOIN principles ON principles.id=status.pid WHERE cases.id = $1;`,[id], (err, data)=>{
-    console.log(data);
-    console.log(err);
     let single={
       id: data[0].id, title: data[0].title, diagnosis: data[0].diagnosis, patient: data[0].patient, doctor:data[0].doctor, specialty: data[0].specialty, before: data[0].before, after: data[0].after, principles: []
     }

@@ -14,7 +14,6 @@ angular.module(`DesignDoc`).service(`adminService`,function($http){
 
   //===send post to server===\\
   this.sendPost=(p)=>{
-    console.log(p);
     imageExtensionB = p.before.imageData.split(';')[0].split('/')
     imageExtensionB = imageExtensionB[imageExtensionB.length - 1];
     imageExtensionA = p.after.imageData.split(';')[0].split('/')

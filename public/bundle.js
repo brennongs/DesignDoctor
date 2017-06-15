@@ -7,7 +7,6 @@ angular.module('DesignDoc').controller('aboutCtrl', ["$scope", "$state", "$sce",
       cb(response.data);
     });
   };
-  $scope.getText('about-me');
 
   $scope.setPage = function (url) {
     switch (url) {
@@ -88,7 +87,6 @@ angular.module('DesignDoc').service('adminService', ["$http", function ($http) {
 
   //===send post to server===\\
   this.sendPost = function (p) {
-    console.log(p);
     imageExtensionB = p.before.imageData.split(';')[0].split('/');
     imageExtensionB = imageExtensionB[imageExtensionB.length - 1];
     imageExtensionA = p.after.imageData.split(';')[0].split('/');
@@ -274,5 +272,9 @@ angular.module("DesignDoc").controller("navCtrl", ["$scope", "$stateParams", "$s
     $("#pic").css("width", "100%").css("height", "auto").attr("src", "./img/logo_full.svg");
     $("#opt-nav").css("display", "none");
   });
+  $scope.show = false;
+  $scope.logShow = function () {
+    console.log($scope.show);
+  };
 }]);
 //# sourceMappingURL=bundle.js.map

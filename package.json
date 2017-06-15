@@ -23,7 +23,7 @@
     "concurrently": "^3.4.0"
   },
   "scripts": {
-    "start": "concurrently \"yarn server\" \"sass --watch ./public/styles/main.scss:./public/styles.css\"",
+    "start": "concurrently \"yarn server\" \"gulp watch\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon server.js"
   },

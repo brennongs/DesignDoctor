@@ -50,5 +50,30 @@ nav{
       font-size: 20px;
       font-weight: 200;
     }
+    .menu{
+      width: 300px;
+      height: 200px;
+      background: $white;
+      color: $red;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      box-shadow: 0 1.5px 1.5px #dddddd;
+      box-sizing: border-box;
+      .menu-opt{
+        height: calc(100%/3);
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        font-size: 20px;
+      }
+      .about{
+        border-top: 1px solid #dddddd;
+        border-bottom: 1px solid #dddddd;
+      }
+    }
   }
 }
